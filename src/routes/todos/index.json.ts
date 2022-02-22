@@ -14,7 +14,7 @@ export const post = async (request) => {
   const data = await request.request.formData();
   todos.push({
     created_at: new Date(),
-    text: data.body.get("text").toString(),
+    text: data.get("text").toString(),
     done: false
   });
 
