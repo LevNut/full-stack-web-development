@@ -8,7 +8,6 @@ export const get: RequestHandler = (request) => {
 export const post = async (request) => {
   const data = await request.request.formData();
   return api(request, {
-    uid: `${Date.now()}`,
     created_at: new Date(),
     text: data.get("text").toString(),
     done: false
