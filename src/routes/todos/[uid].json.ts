@@ -10,9 +10,7 @@ export const patch = async (request) => {
   console.log(data);
 
   return api(request, {
-    uid: "",
-    created_at: new Date(),
-    text: data.get("text").toString(),
-    done: false
+    text: data.get("text"),
+    done: data.has("done") ? !!data.get("done") : undefined
   })
 }
